@@ -1,9 +1,7 @@
 package com.mmall.common;
 
-import net.sf.jsqlparser.schema.Server;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
-import sun.plugin2.main.server.ServerPrintHelper;
 
 import java.io.Serializable;
 
