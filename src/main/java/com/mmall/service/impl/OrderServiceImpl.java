@@ -410,6 +410,12 @@ public class OrderServiceImpl implements IOrderService {
                 AlipayTradePrecreateResponse response = result.getResponse();
                 dumpResponse(response);
 
+                File fileDir = new File(path);
+                if (!fileDir.exists()){
+                    fileDir.setWritable(true);
+                    fileDir.mkdirs();
+                }
+
                 // 需要修改为运行机器上的路径
                 String qrPath = String.format(path+"/qr-%s.png", response.getOutTradeNo());
                 String qrFileName = String.format("qr-%s.png", response.getOutTradeNo());
