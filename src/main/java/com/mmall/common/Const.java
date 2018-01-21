@@ -18,6 +18,10 @@ public class Const {
         Set<String> PRICE_ASC_DESC = Sets.newHashSet("price_desc","price_asc");
     }
 
+    public interface RedisCacheExtime{
+        int REDIS_SESSION_EXTIME = 60 * 30;//30分钟
+    }
+
     public interface Cart{
         int CHECKED = 1;//即购物车选中状态
         int UN_CHECKED = 0;//购物车中未选中状态
@@ -98,7 +102,7 @@ public class Const {
         }
     }
 
-    public interface AlipayCallback{
+public interface AlipayCallback{
         String TRADE_STATUS_WAIT_BUYER_PAY = "WAIT_BUYER_PAY";
         String TRADE_STATUS_TRADE_SUCCESS = "TRADE_SUCCESS";
 

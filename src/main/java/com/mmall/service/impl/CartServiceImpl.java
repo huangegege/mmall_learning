@@ -14,9 +14,8 @@ import com.mmall.util.BigDecimalUtil;
 import com.mmall.util.PropertiesUtil;
 import com.mmall.vo.CartProductVo;
 import com.mmall.vo.CartVo;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,9 +26,8 @@ import java.util.List;
  * Created by liuhuan on 2017/9/18.
  */
 @Service("iCartService")
+@Slf4j
 public class CartServiceImpl implements ICartService {
-
-    private Logger logger = LoggerFactory.getLogger(CartServiceImpl.class);
 
     @Autowired
     private CartMapper cartMapper;
@@ -151,7 +149,7 @@ public class CartServiceImpl implements ICartService {
                     }
                     cartProductVoList.add(cartProductVo);
                 }else{
-                    logger.warn("productId为" + cartItem.getProductId() + "的产品不存在");
+                    log.warn("productId为" + cartItem.getProductId() + "的产品不存在");
                 }
             }
         }
