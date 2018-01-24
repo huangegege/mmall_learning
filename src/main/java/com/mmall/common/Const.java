@@ -104,7 +104,12 @@ public class Const {
         }
     }
 
-public interface AlipayCallback{
+    public interface REDIS_LOCK{
+        String CLOSE_ORDER_TASK_LOCK = "CLOSE_ORDER_TASK_LOCK";//关闭订单的分布式锁
+    }
+
+
+    public interface AlipayCallback{
         String TRADE_STATUS_WAIT_BUYER_PAY = "WAIT_BUYER_PAY";
         String TRADE_STATUS_TRADE_SUCCESS = "TRADE_SUCCESS";
 
