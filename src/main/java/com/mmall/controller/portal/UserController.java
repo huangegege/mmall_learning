@@ -36,9 +36,13 @@ public class UserController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "login.do",method = RequestMethod.POST)
+    @RequestMapping(value = "login.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession session, HttpServletResponse httpServletResponse){
+        //测试全局异常
+//        int i = 0;
+//        int j = 666 / i;
+
         ServerResponse<User> response = iUserService.login(username, password);
         if (response.isSuccess()){
             CookieUtil.writeLoginToken(httpServletResponse,session.getId());
