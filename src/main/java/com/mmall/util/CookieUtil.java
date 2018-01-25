@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class CookieUtil {
 
-    private final static String COOKIE_DOMAIN = ".happymmall.com";
-    private final static String COOKIE_NAME = "mmall_login_token";
+    private final static String COOKIE_DOMAIN = PropertiesUtil.getProperty("cookie.domain",".huanliu.org");
+    private final static String COOKIE_NAME = PropertiesUtil.getProperty("cookie.login.token.name","mmall_login_token");
 
     public static String readLoginToken(HttpServletRequest request){
         Cookie[] cks = request.getCookies();
