@@ -57,7 +57,7 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
-    @Scheduled(cron = "0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
+//    @Scheduled(cron = "0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
     public void closeOrderTaskV3(){
         log.info("关闭订单定时任务启动");
         long lockTimeout = Long.parseLong(PropertiesUtil.getProperty("lock.timeout","5000"));
@@ -90,7 +90,7 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
-//    @Scheduled(cron = "0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
+    @Scheduled(cron = "0 */1 * * * ?")//每1分钟(每个1分钟的整数倍)
     public void closeOrderTaskV4(){
         RLock lock = redissonManager.getRedisson().getLock(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
         boolean getLock = false;
